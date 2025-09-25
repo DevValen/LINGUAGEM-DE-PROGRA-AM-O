@@ -1,0 +1,28 @@
+hello world é o começo de tudo
+print("Hello World!")
+
+nome = input("Digite um nome:")
+
+#formatadores de caracteres
+print("Olá %s, bem-vindo a disciplina de programação. Parabéns pelo seu primeiro hello world!" % (nome) )
+
+#F-string
+print(f"Olá(nome), bem-vindo a disciplina de programação. Parabéns pelo seu primeiro hello world!")
+#O PYTHON TEM MUITO DISSO, VARIAS FORMAS DE ESCREVER O MESMO CÓDIGO
+
+Nota_1 = int(input("Digite a primeira nota:"))
+Nota_2 = int(input("Digite a segunda nota:"))
+Nota_3 = int(input("Digite a terceira nota:"))
+Nota_4 = int(input("Digite a quarta nota:"))
+#Repara que usamos a função int(), pq sem ela o python entenderia como uma string
+#condição para a aprovação do aluno:
+media = (Nota_1+Nota_2+Nota_3+Nota_4)/4
+
+if media >= 6:
+  situacao = "Aprovado"
+else:
+  situacao = "Reprovado"
+
+print(f"A média do aluno é: {media}")
+print(f"Situação: {situacao}")
+
