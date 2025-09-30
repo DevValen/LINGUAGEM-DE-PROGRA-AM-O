@@ -15,5 +15,5 @@ Ferramentas: Visual Studio Code, Pycharm e Google Colab
 Contato
 
 📧 E-mail: [vlntnsntngl@gmail.com]
-break
+
 💼 LinkedIn: [https://www.linkedin.com/in/valentina-santangelo-97bb8a248]
