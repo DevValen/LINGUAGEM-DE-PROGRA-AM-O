@@ -1,91 +1,47 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyOg/hOFRR6ngD0cLhfMTAIu",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/DevValen/LINGUAGEM-DE-PROGRA-AM-O/blob/main/EXERC%C3%8DCIO_PR%C3%81TICO_UNIDADE_1.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 16,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "Xkgyn3Lpymc_",
-        "outputId": "43f70eff-5b4e-442a-a1cd-1e1b8dfbb841"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Olá! Bem-vindo ao sistema de notas!\n",
-            "Digite o nome do aluno:José\n",
-            "Veja o relatório de notas do aluno: José\n",
-            "Digite a primeira nota:10\n",
-            "Digite a segunda nota:6\n",
-            "Digite a terceira nota:8\n",
-            "Digite a quarta nota:3\n",
-            "A primeira nota é: 10\n",
-            "A segunda nota é: 6\n",
-            "A terceira nota é: 8\n",
-            "A quarta nota é: 3\n",
-            "A média do aluno é: 6.75\n",
-            "Situação:Você foi aprovado!\n"
-          ]
-        }
-      ],
-      "source": [
-        "#Quis fazer como se fosse uma busca de nomes no sistema:\n",
-        "\n",
-        "print(\"Olá! Bem-vindo ao sistema de notas!\")\n",
-        "nome = input(\"Digite o nome do aluno:\")\n",
-        "print(\"Veja o relatório de notas do aluno: %s\" % (nome))\n",
-        "#Determine as notas dos aluno:\n",
-        "Nota_1 = int(input(\"Digite a primeira nota:\"))\n",
-        "Nota_2 = int(input(\"Digite a segunda nota:\"))\n",
-        "Nota_3 = int(input(\"Digite a terceira nota:\"))\n",
-        "Nota_4 = int(input(\"Digite a quarta nota:\"))\n",
-        "\n",
-        "print(f\"A primeira nota é: {Nota_1}\")\n",
-        "print(f\"A segunda nota é: {Nota_2}\")\n",
-        "print(f\"A terceira nota é: {Nota_3}\")\n",
-        "print(f\"A quarta nota é: {Nota_4}\")\n",
-        "\n",
-        "#Calcule a média:\n",
-        "media = (Nota_1+Nota_2+Nota_3+Nota_4)/4\n",
-        "\n",
-        "\n",
-        "#Determine a situação do aluno:\n",
-        "if media >= 6:\n",
-        "  situação = \"Você foi aprovado!\"\n",
-        "else:\n",
-        "  situação = \"Você foi reprovado.\"3\n",
-        "print(f\"A média do aluno é: {media:.2f}\")\n",
-        "print(f\"Situação:{situação}\")"
-      ]
-    }
-  ]
-}
+# sistema_notas.py
+def ler_nota(prompt):
+    """
+    Lê uma nota do usuário, validando que seja um número entre 0 e 10.
+    Repete até receber um valor válido.
+    """
+    while True:
+        entrada = input(prompt).strip().replace(",", ".")
+        try:
+            nota = float(entrada)
+        except ValueError:
+            print("Entrada inválida. Digite um número (ex: 7 ou 7.5).")
+            continue
+        if 0 <= nota <= 10:
+            return nota
+        print("Nota inválida. Informe um valor entre 0 e 10.")
+
+def main():
+    print("Olá! Bem-vindo ao sistema de notas!")
+    nome = input("Digite o nome do aluno: ").strip()
+    if nome == "":
+        nome = "Aluno(a) sem nome"
+
+    print(f"\nVeja o relatório de notas do aluno: {nome}\n")
+
+    nota1 = ler_nota("Digite a primeira nota: ")
+    nota2 = ler_nota("Digite a segunda nota: ")
+    nota3 = ler_nota("Digite a terceira nota: ")
+    nota4 = ler_nota("Digite a quarta nota: ")
+
+    print()
+    print(f"A primeira nota é: {nota1}")
+    print(f"A segunda nota é: {nota2}")
+    print(f"A terceira nota é: {nota3}")
+    print(f"A quarta nota é: {nota4}")
+
+    media = (nota1 + nota2 + nota3 + nota4) / 4
+
+    # Critério de aprovação: média maior ou igual a 6
+    situacao = "Você foi aprovado!" if media >= 6 else "Você foi reprovado."
+
+    print(f"\nA média do aluno é: {media:.2f}")
+    print(f"Situação: {situacao}")
+
+if __name__ == "__main__":
+    main()
+
