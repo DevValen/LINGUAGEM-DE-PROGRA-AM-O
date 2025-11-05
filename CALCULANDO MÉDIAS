@@ -1,28 +1,51 @@
-hello world é o começo de tudo
+# ===========================================================
+# ARQUIVO: hello_world_primeiro_programa.ipynb
+# ===========================================================
+
+# "Hello World" é o começo de tudo!
 print("Hello World!")
 
-nome = input("Digite um nome:")
+# -----------------------------------------------------------
+# Entrada de dados
+# -----------------------------------------------------------
+nome = input("Digite um nome: ")
 
-#formatadores de caracteres
-print("Olá %s, bem-vindo a disciplina de programação. Parabéns pelo seu primeiro hello world!" % (nome) )
+# -----------------------------------------------------------
+# Saída formatada (duas formas diferentes)
+# -----------------------------------------------------------
 
-#F-string
-print(f"Olá(nome), bem-vindo a disciplina de programação. Parabéns pelo seu primeiro hello world!")
-#O PYTHON TEM MUITO DISSO, VARIAS FORMAS DE ESCREVER O MESMO CÓDIGO
+# Usando o formatador de caracteres (%s)
+print("Olá %s, bem-vindo(a) à disciplina de Programação. Parabéns pelo seu primeiro Hello World!" % (nome))
 
-Nota_1 = int(input("Digite a primeira nota:"))
-Nota_2 = int(input("Digite a segunda nota:"))
-Nota_3 = int(input("Digite a terceira nota:"))
-Nota_4 = int(input("Digite a quarta nota:"))
-#Repara que usamos a função int(), pq sem ela o python entenderia como uma string
-#condição para a aprovação do aluno:
-media = (Nota_1+Nota_2+Nota_3+Nota_4)/4
+# Usando f-string (forma moderna e mais prática)
+print(f"Olá {nome}, bem-vindo(a) à disciplina de Programação. Parabéns pelo seu primeiro Hello World!")
+
+# -----------------------------------------------------------
+# Cálculo da média de notas
+# -----------------------------------------------------------
+
+# A função int() transforma o valor digitado (texto) em número inteiro
+Nota_1 = int(input("Digite a primeira nota: "))
+Nota_2 = int(input("Digite a segunda nota: "))
+Nota_3 = int(input("Digite a terceira nota: "))
+Nota_4 = int(input("Digite a quarta nota: "))
+
+# Calculando a média
+media = (Nota_1 + Nota_2 + Nota_3 + Nota_4) / 4
+
+# -----------------------------------------------------------
+# Verificação da situação do aluno
+# -----------------------------------------------------------
 
 if media >= 6:
-  situacao = "Aprovado"
+    situacao = "Aprovado(a)"
 else:
-  situacao = "Reprovado"
+    situacao = "Reprovado(a)"
 
-print(f"A média do aluno é: {media}")
+# -----------------------------------------------------------
+# Exibição dos resultados
+# -----------------------------------------------------------
+print(f"\nA média do aluno é: {media:.2f}")
 print(f"Situação: {situacao}")
+
 
