@@ -1,134 +1,68 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyNbCBF7CtconfWeR0ZyiTzM",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/DevValen/LINGUAGEM-DE-PROGRA-AM-O/blob/main/UNIDADE_1_AULA_2_(LP).ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "a = 'aluno'\n",
-        "b = 'aluna'\n",
-        "\n",
-        "a is not b\n",
-        "#faça testes com 'is' e 'is not' e outras variaveis"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "fPj2oroTBTOX",
-        "outputId": "0c219b65-1584-4430-8a83-f07da84eb52b"
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "True"
-            ]
-          },
-          "metadata": {},
-          "execution_count": 3
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "idade = 18\n",
-        "\n",
-        "if idade < 18:\n",
-        "    print('Menor de idade')\n",
-        "elif idade >= 18 and idade< 65:\n",
-        "    print(\"Adulto\")\n",
-        "else:\n",
-        "    print(\"Idoso\")"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "32w9nYTJEGHe",
-        "outputId": "2738868d-95ad-489b-d1d4-ea64ea21110b"
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Adulto\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "#Bem-vindo à Máquina de Venda Automática de Ingressos de Cinema!\n",
-        "\n",
-        "#Solicitando a idade do cliente\n",
-        "Idade = int(input(\"Por favor, digite sua idade:\"))\n",
-        "\n",
-        "#Verificando a idade para sugestão de filmes\n",
-        "if Idade < 12:\n",
-        "  print(\"Recomendamos o filme infantil FILME 1\")\n",
-        "elif 12 <= Idade < 18:\n",
-        "  print(\"Recomendamos o filme adolescente FILME 2\")\n",
-        "else:\n",
-        "  print(\"Recomendamos o emocionante FILME 3\")\n",
-        "\n",
-        "\n",
-        "#Verificando a disponibilidade de ingressos:\n",
-        "quantidade_ingressos = 10                 #Supondo que tem essa quantidade\n",
-        "if quantidade_ingressos > 0:\n",
-        "   print(\"Ingressos estão disponíveis. Divirta-se no cinema!\")\n",
-        "else:\n",
-        "  print(\"Desculpe, todos os ingressos estão esgotados para hoje.\")"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "ehEmvN_5HZRd",
-        "outputId": "fc25f293-9954-486a-f53a-70affd9dc75a"
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Por favor, digite sua idade:15\n",
-            "Recomendamos o filme adolescente FILME 2\n",
-            "Ingressos estão disponíveis. Divirta-se no cinema!\n"
-          ]
-        }
-      ]
-    }
-  ]
-}
+# ===========================================================
+# ARQUIVO: UNIDADE_1_AULA_2_(LP).ipynb
+# ===========================================================
+
+# -----------------------------------------------------------
+# Teste com operadores de identidade: 'is' e 'is not'
+# -----------------------------------------------------------
+
+a = 'aluno'
+b = 'aluna'
+
+# O operador 'is' verifica se as variáveis apontam para o mesmo objeto
+# O operador 'is not' verifica se NÃO são o mesmo objeto
+print("a é b?", a is b)
+print("a não é b?", a is not b)
+
+# Outros testes:
+x = [1, 2, 3]
+y = x
+z = [1, 2, 3]
+
+print("\nTestes com listas:")
+print("x é y?", x is y)   # True, pois y aponta para o mesmo objeto que x
+print("x é z?", x is z)   # False, pois z é outro objeto com o mesmo conteúdo
+print("x == z?", x == z)  # True, pois o conteúdo é igual
+
+
+# -----------------------------------------------------------
+# Estrutura condicional com idade
+# -----------------------------------------------------------
+
+idade = 18
+
+if idade < 18:
+    print("\nMenor de idade")
+elif idade >= 18 and idade < 65:
+    print("\nAdulto")
+else:
+    print("\nIdoso")
+
+
+# -----------------------------------------------------------
+# Máquina de Venda Automática de Ingressos de Cinema
+# -----------------------------------------------------------
+
+print("\n--- Máquina de Venda Automática de Ingressos de Cinema ---")
+
+try:
+    idade_cliente = int(input("Por favor, digite sua idade: "))
+except ValueError:
+    print("Entrada inválida! Digite um número inteiro para a idade.")
+    idade_cliente = 0
+
+# Verificando a idade para sugestão de filmes
+if idade_cliente < 12:
+    print("Recomendamos o filme infantil: FILME 1")
+elif 12 <= idade_cliente < 18:
+    print("Recomendamos o filme adolescente: FILME 2")
+else:
+    print("Recomendamos o emocionante: FILME 3")
+
+# Verificando a disponibilidade de ingressos
+quantidade_ingressos = 10  # Supondo que há 10 ingressos disponíveis
+
+if quantidade_ingressos > 0:
+    print("Ingressos estão disponíveis. Divirta-se no cinema!")
+else:
+    print("Desculpe, todos os ingressos estão esgotados para hoje.")
